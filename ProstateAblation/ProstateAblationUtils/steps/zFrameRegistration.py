@@ -133,7 +133,7 @@ class ProstateAblationZFrameRegistrationStepLogic(ProstateAblationLogicBase):
     self.templateConfig = []
     defaultTemplateFile = os.path.join(self.resourcesPath, "zframe", self.ZFRAME_NEEDLEPATH_CONFIG_FILE_NAME)
 
-    reader = csv.reader(open(defaultTemplateFile, 'rb'))
+    reader = csv.reader(open(defaultTemplateFile, 'rt'))
     try:
       next(reader)
       for row in reader:
