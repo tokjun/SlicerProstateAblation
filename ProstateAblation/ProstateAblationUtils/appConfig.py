@@ -1,7 +1,8 @@
-import ConfigParser
+#import ConfigParser
+import configparser
 import inspect, os
 from SlicerDevelopmentToolboxUtils.mixins import ModuleWidgetMixin
-from constants import ProstateAblationConstants
+from ProstateAblationUtils.constants import ProstateAblationConstants
 
 class ConfigurationParser(ModuleWidgetMixin):
 
@@ -28,7 +29,8 @@ class ConfigurationParser(ModuleWidgetMixin):
     return tuple(stringValue.split(self.SEPERATOR))
 
   def loadConfiguration(self):
-    self.config = ConfigParser.RawConfigParser()
+    #self.config = ConfigParser.RawConfigParser()
+    self.config = configparser.RawConfigParser()
     self.config.read(self.configFile)
     if not self.getSetting("ZFrame_Registration_Class_Name"):
       self.setSetting("ZFrame_Registration_Class_Name", self.config.get('ZFrame Registration', 'class'))

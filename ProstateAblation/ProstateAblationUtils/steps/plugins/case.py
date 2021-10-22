@@ -5,13 +5,13 @@ import vtk
 import qt
 import logging
 
-from ...helpers import NewCaseSelectionNameWidget
+from ProstateAblationUtils.helpers import NewCaseSelectionNameWidget
 
 from SlicerDevelopmentToolboxUtils.decorators import logmethod
 from SlicerDevelopmentToolboxUtils.helpers import WatchBoxAttribute
 from SlicerDevelopmentToolboxUtils.widgets import BasicInformationWatchBox
 
-from ..base import ProstateAblationPlugin, ProstateAblationLogicBase
+from ProstateAblationUtils.steps.base import ProstateAblationPlugin, ProstateAblationLogicBase
 from SlicerDevelopmentToolboxUtils.icons import Icons
 
 class ProstateAblationCaseManagerLogic(ProstateAblationLogicBase):

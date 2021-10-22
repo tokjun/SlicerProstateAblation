@@ -7,8 +7,8 @@ import ast
 import SimpleITK as sitk
 import sitkUtils
 
-from ..constants import ProstateAblationConstants
-from base import ProstateAblationLogicBase, ProstateAblationStep
+from ProstateAblationUtils.constants import ProstateAblationConstants
+from ProstateAblationUtils.steps.base import ProstateAblationLogicBase, ProstateAblationStep
 
 from SlicerDevelopmentToolboxUtils.decorators import onModuleSelected
 from SlicerDevelopmentToolboxUtils.helpers import SliceAnnotation
@@ -46,7 +46,7 @@ class OpenSourceZFrameRegistration(ZFrameRegistrationBase):
 
     params = {'inputVolume': self.inputVolume, 'startSlice': start, 'endSlice': end,
               'outputTransform': self.outputTransform}
-    print params
+    print(params)
     slicer.cli.run(slicer.modules.zframeregistration, None, params, wait_for_completion=True)
 
 class ProstateAblationZFrameRegistrationStepLogic(ProstateAblationLogicBase):

@@ -3,8 +3,8 @@ import vtk
 import numpy
 import logging
 import slicer
-from ...constants import ProstateAblationConstants as constants
-from ..base import ProstateAblationPlugin, ProstateAblationLogicBase
+from ProstateAblationUtils.constants import ProstateAblationConstants as constants
+from ProstateAblationUtils.steps.base import ProstateAblationPlugin, ProstateAblationLogicBase
 from SlicerDevelopmentToolboxUtils.mixins import ModuleLogicMixin
 from SlicerDevelopmentToolboxUtils.decorators import onModuleSelected
 from SlicerDevelopmentToolboxUtils.helpers import SliceAnnotation
@@ -313,9 +313,9 @@ class TargetsDistanceTable(ProstateAblationPlugin):
       self.keyReleaseEventObservers[interactor] = interactor.AddObserver("KeyReleaseEvent", self.onKeyReleasedEvent)
 
   def disconnectKeyEventObservers(self):
-    for interactor, tag in self.keyPressEventObservers.iteritems():
+    for interactor, tag in self.keyPressEventObservers.items():
       interactor.RemoveObserver(tag)
-    for interactor, tag in self.keyReleaseEventObservers.iteritems():
+    for interactor, tag in self.keyReleaseEventObservers.items():
       interactor.RemoveObserver(tag)
 
   def onKeyPressedEvent(self, caller, event):
@@ -431,7 +431,7 @@ class TargetsDistanceTable(ProstateAblationPlugin):
     self.moveTargetMode = False
 
   def clearTargetMovementObserverAndAnnotations(self):
-    for widget, (observer, annotation) in self.mouseReleaseEventObservers.iteritems():
+    for widget, (observer, annotation) in self.mouseReleaseEventObservers.items():
       sliceView = widget.sliceView()
       interactor = sliceView.interactorStyle().GetInteractor()
       interactor.RemoveObserver(observer)

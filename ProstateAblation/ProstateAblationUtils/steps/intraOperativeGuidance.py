@@ -3,7 +3,7 @@ import ast
 import qt
 import slicer
 import vtk
-from ..constants import ProstateAblationConstants
+from ProstateAblationUtils.constants import ProstateAblationConstants
 from ProstateAblationUtils.steps.base import ProstateAblationLogicBase,ProstateAblationStep
 
 class ProstateAblationGuidanceStepLogic(ProstateAblationLogicBase): # make it the same as overview for now

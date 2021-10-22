@@ -6,8 +6,8 @@ import vtk
 import ctk
 import slicer
 
-from ...constants import ProstateAblationConstants
-from ..base import ProstateAblationPlugin
+from ProstateAblationUtils.constants import ProstateAblationConstants
+from ProstateAblationUtils.steps.base import ProstateAblationPlugin
 
 from SlicerDevelopmentToolboxUtils.helpers import SampleDataDownloader
 from SlicerDevelopmentToolboxUtils.decorators import *
@@ -48,7 +48,7 @@ class ProstateAblationTrainingPlugin(ProstateAblationPlugin):
     self.simulateIntraopPhaseButton.enabled = True
     intraopZipFile = self.initiateSampleDataDownload(ProstateAblationConstants.INTRAOP_SAMPLE_DATA_URL)
     if not self.sampleDownloader.wasCanceled() and intraopZipFile:
-      print intraopZipFile
+      print(intraopZipFile)
       self.unzipFileAndCopyToDirectory(intraopZipFile, self.session.intraopDICOMDirectory)
       
 
@@ -83,7 +83,7 @@ class ProstateAblationTrainingPlugin(ProstateAblationPlugin):
       self.clearData()
 
   def copyDirectory(self, source, destination, recursive=True):
-    print source
+    print(source)
     assert os.path.isdir(source)
     for listObject in os.listdir(source):
       current = os.path.join(source, listObject)

@@ -9,11 +9,11 @@ import vtk
 from SlicerDevelopmentToolboxUtils.constants import COLOR
 from SlicerDevelopmentToolboxUtils.decorators import logmethod, onReturnProcessEvents, processEventsEvery
 from SlicerDevelopmentToolboxUtils.widgets import CustomStatusProgressbar
-from base import ProstateAblationLogicBase, ProstateAblationStep
+from ProstateAblationUtils.steps.base import ProstateAblationLogicBase, ProstateAblationStep
 from ProstateAblationUtils.steps.plugins.case import ProstateAblationCaseManagerPlugin
 from ProstateAblationUtils.steps.plugins.training import ProstateAblationTrainingPlugin
-from ..constants import ProstateAblationConstants as constants
-from ..helpers import SeriesTypeManager
+from ProstateAblationUtils.constants import ProstateAblationConstants as constants
+from ProstateAblationUtils.helpers import SeriesTypeManager
 from SlicerDevelopmentToolboxUtils.icons import Icons
 
 class ProstateAblationOverViewStepLogic(ProstateAblationLogicBase):

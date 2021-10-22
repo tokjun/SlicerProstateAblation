@@ -2,13 +2,13 @@ import qt
 import vtk
 import slicer
 import numpy
-from ...constants import ProstateAblationConstants as constants
-from ..base import ProstateAblationPlugin
+from ProstateAblationUtils.constants import ProstateAblationConstants as constants
+from ProstateAblationUtils.steps.base import ProstateAblationPlugin
 
 from SlicerDevelopmentToolboxUtils.helpers import SliceAnnotation
 from SlicerDevelopmentToolboxUtils.widgets import TargetCreationWidget
 from SlicerDevelopmentToolboxUtils.icons import Icons
-from targetsDefinitionTable import TargetsDefinitionTable
+from ProstateAblationUtils.steps.plugins.targetsDefinitionTable import TargetsDefinitionTable
 
 
 class TargetsDefinitionPlugin(ProstateAblationPlugin):
